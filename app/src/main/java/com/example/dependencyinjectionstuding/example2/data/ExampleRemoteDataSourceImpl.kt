@@ -1,10 +1,12 @@
 package com.example.dependencyinjectionstuding.example2.data
 
-class ExampleRemoteDataSourceImpl(
-    private val apiService: ExampleApiService
+import javax.inject.Inject
+
+class ExampleRemoteDataSourceImpl @Inject constructor(
+     val apiService: ExampleApiService
 ) : ExampleRemoteDataSource {
 
     override fun method() {
-
+        apiService.method()
     }
 }

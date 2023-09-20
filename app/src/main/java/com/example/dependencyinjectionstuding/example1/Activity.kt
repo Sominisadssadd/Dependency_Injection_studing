@@ -5,17 +5,16 @@ import javax.inject.Inject
 class Activity {
 
 
-    lateinit var keyboard: Keyboard
+    //Указывая Inject мы говорим что в это поле должен поставляться какой-то класс
+    //если Inject нет, то ничего поставляться не будет
 
 
-    lateinit var monitor: Monitor
-
-
-    lateinit var mouse: Mouse
-
+    @Inject
+    lateinit var computer: Computer
 
     init {
         DaggerNewComponent.create().inject(this)
+
     }
 
 

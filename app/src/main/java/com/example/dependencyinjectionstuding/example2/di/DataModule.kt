@@ -12,9 +12,11 @@ interface  DataModule {
 
     //С Binds приложение будет собираться быстрее и будет использоваться меньше кода
     //метод связывает интерфейс с реализацией
+    @ApplicationScope
     @Binds
     fun provideRepositoryDataBase(repository: ExampleLocalDataSourceImpl): ExampleLocalDataSource
 
+    @ApplicationScope
     @Binds
     fun provideRepositoryApi(repository: ExampleRemoteDataSourceImpl): ExampleRemoteDataSource
 

@@ -6,15 +6,18 @@ import android.util.Log
 import android.widget.Toast
 import com.example.dependencyinjectionstuding.R
 import javax.inject.Inject
+import javax.inject.Singleton
+
 
 class ExampleDatabase @Inject constructor(
-    val context: Context
+    val context: Context,
+    val systemTime: String
 ) {
 
     fun method() {
 
 
-        Log.d(LOG_TAG, "Database ${context.getString(R.string.app_name)}")
+        Log.d(LOG_TAG, "Database ${context.getString(R.string.app_name)} $systemTime   $this")
 
     }
 

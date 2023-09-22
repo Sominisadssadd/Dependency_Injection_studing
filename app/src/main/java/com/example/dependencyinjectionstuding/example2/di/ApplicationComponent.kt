@@ -9,7 +9,7 @@ import javax.inject.Singleton
 
 
 @ApplicationScope
-@Component(modules = [DataModule::class, DomainModule::class])
+@Component(modules = [DataModule::class, DomainModule::class, ViewModelModule::class])
 interface ApplicationComponent {
 
     fun inject(activity: MainActivity)
@@ -22,6 +22,4 @@ interface ApplicationComponent {
             @BindsInstance timeMillis: String
         ): ApplicationComponent
     }
-
-
 }

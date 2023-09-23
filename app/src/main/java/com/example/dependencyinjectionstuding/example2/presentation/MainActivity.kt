@@ -26,14 +26,18 @@ class MainActivity : AppCompatActivity() {
 
     private val component by lazy {
         (application as ExampleApplication).inject
+            .componentActivity()
+            .create("MyID","MyName")
+
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         component.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         viewModel.method()
+
+
 
     }
 }

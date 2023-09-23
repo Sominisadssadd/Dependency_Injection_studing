@@ -9,17 +9,18 @@ import javax.inject.Singleton
 
 
 @ApplicationScope
-@Component(modules = [DataModule::class, DomainModule::class, ViewModelModule::class])
+@Component(modules = [DataModule::class, DomainModule::class])
 interface ApplicationComponent {
 
-    fun inject(activity: MainActivity)
+
+    fun componentActivity(): ActivityComponent.ActivityComponentFactory
 
     @Component.Factory
     interface ApplicationComponentFactory {
 
         fun create(
             @BindsInstance context: Context,
-            @BindsInstance timeMillis: String
+            @BindsInstance timeMillis: Long
         ): ApplicationComponent
     }
 }

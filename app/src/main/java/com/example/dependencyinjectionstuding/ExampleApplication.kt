@@ -7,7 +7,7 @@ class ExampleApplication : Application() {
 
     val inject by lazy {
         DaggerApplicationComponent.factory()
-            .create(this, System.currentTimeMillis().toString())
+            .create(this, System.currentTimeMillis())
     }
 
 }

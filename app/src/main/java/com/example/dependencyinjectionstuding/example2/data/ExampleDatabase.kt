@@ -11,7 +11,7 @@ import javax.inject.Singleton
 
 class ExampleDatabase @Inject constructor(
     val context: Context,
-    val systemTime: String
+    val systemTime: Long
 ) {
 
     fun method() {
@@ -20,6 +20,8 @@ class ExampleDatabase @Inject constructor(
         Log.d(LOG_TAG, "Database ${context.getString(R.string.app_name)} $systemTime   $this")
 
     }
+
+
 
     companion object {
         private const val LOG_TAG = "EXAMPLE_TEST"
